@@ -1,0 +1,12 @@
+rpg:
+    resource: "@RPGBundle/Resources/config/routing.yml"
+    prefix:   /
+
+rpg_rest:
+    resource: "@RPGBundle/Controller"
+    type:     annotation
+    prefix:   /
+
+nelmio_api_swagger:
+    resource: "@NelmioApiDocBundle/Resources/config/swagger_routing.yml"
+    prefix: /api-docs

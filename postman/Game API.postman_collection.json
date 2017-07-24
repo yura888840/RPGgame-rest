@@ -1,0 +1,223 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Game API",
+		"_postman_id": "46e3a998-dd2f-dc59-00fe-32717fa6f6ef",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AdminAPI",
+			"description": "",
+			"item": [
+				{
+					"name": "List of avaialable roles",
+					"request": {
+						"url": "{{url}}/role",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create new role",
+					"request": {
+						"url": "{{url}}/role",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Researcher",
+									"type": "text"
+								},
+								{
+									"key": "health",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "strength",
+									"value": "50",
+									"type": "text"
+								},
+								{
+									"key": "experience",
+									"value": "50",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete role",
+					"request": {
+						"url": "{{url}}/role/1",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update existing role",
+					"request": {
+						"url": "{{url}}/role/1",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "111",
+									"type": "text"
+								},
+								{
+									"key": "health",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "strength",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "experience",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "List of avaialable characters in game",
+			"request": {
+				"url": "{{url}}/person/1",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create new character",
+			"request": {
+				"url": "{{url}}/person",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Yuri",
+							"type": "text"
+						},
+						{
+							"key": "role",
+							"value": "Researcher",
+							"type": "text"
+						},
+						{
+							"key": "uuid",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Save state for current character",
+			"request": {
+				"url": "{{url}}/gameplay/save/1",
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Load state for current character",
+			"request": {
+				"url": "{{url}}/gameplay/load/1",
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Quest - current step",
+			"request": {
+				"url": "{{url}}/scenario/current_step/df3trret3er",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Quest - jump to next step from current",
+			"request": {
+				"url": "{{url}}/scenario/goahead/189cc0906e3411e7b9c00242050fe9b0",
+				"method": "POST",
+				"header": [
+					{
+						"key": "choice",
+						"value": "1rgfdg",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "If you have here some question with options, please fill header -\nanswer - with option you select"
+			},
+			"response": []
+		},
+		{
+			"name": "Start game for selected character",
+			"request": {
+				"url": "{{url}}/gameplay/start/1",
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,5 @@
+RPGBundle\Entity\Role:
+    exclusion_policy: ALL
+    properties:
+        id:
+            expose: false

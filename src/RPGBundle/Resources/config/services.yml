@@ -1,0 +1,22 @@
+services:
+
+    user_session:
+      class: RPGBundle\Service\UserSession
+      autowire: true
+
+    scenario:
+      class: RPGBundle\Service\Scenario
+      autowire: true
+
+    request_helper:
+      class: RPGBundle\Service\Request\RequestHelper
+
+    step_questionare_processor:
+      class: RPGBundle\Service\Scenario\StepQuestionProcessor
+      autowire: false
+      arguments:
+        - '@service_container'
+        - '@request_helper'
+
+    RPGBundle\Service\Handlers\:
+        resource: '../../Service/Handlers/*'
